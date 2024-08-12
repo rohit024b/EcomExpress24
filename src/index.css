@@ -31,14 +31,14 @@ button {
   font-family: inherit;
   cursor: pointer;
   transition: border-color 0.25s;
-  background-color: #e00000;
-  /* background-color: #893CAA; */
+  /* background-color: #e00000; */
+  background-color: #893CAA;
   color: #FFFFFF;
   
 }
 button:hover {
-  /* background-color: #893caaed; */
-  background-color: #e00000bd;
+  background-color: #893caaed;
+  /* background-color: #e00000bd; */
   border-color:#646cff;
 }
 button:focus,

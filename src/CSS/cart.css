@@ -1,0 +1,90 @@
+/* {
+    "id": 1,
+  
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category": "men's clothing",
+    "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+    "rating": {
+      "rate": 3.9,
+      "count": 120
+    }
+  }, */
+
+  .cart-box{
+    padding: 15px 10px;
+  }
+  .contient-box{
+    padding: 15px 20px 15px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 0 12px 0 rgb(195, 192, 192);
+    margin-top: 10px;
+  }
+
+.img-box{
+    width: 150px;
+
+    height: 150px;
+}
+.img-box img{
+    width: 70%;
+  }
+  .product-size{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-product{
+    padding: 2px 10px 4px;
+    background: #18b936;
+    margin: 0 5px;
+  }
+  .product-count{
+    margin: 0 5px;
+    padding: 2px 10px 4px;
+    width:40px;
+  }
+  .btn{
+    margin: 2px 5px;
+    padding-top: 5x;
+    border: none;
+  }
+  .remove{
+    background-color: rgb(215, 48, 48);
+    color: white;
+  }
+  .checkout{
+    background-color: rgb(11, 120, 11);
+  }
+  .remove:active{
+    background-color: #c02020;
+    border: none;
+  }
+  .checkout:active{
+    background-color: #288e28;
+    border: none;
+  }
+  :hover{
+    background-color: none;
+  }
+
+
+  .total-price{
+    margin-top: 20px;
+    padding: 4px 15px 20px;
+    box-shadow: 0 0 10px 0 rgb(220, 217, 217);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .card-off{
+    height: 27px;
+    width: 250px;
+    font-size: 18px;
+  }
+  span{
+    font-weight: 700;
+  }

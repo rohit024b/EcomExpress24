@@ -24,11 +24,12 @@ const Navbar = () => {
     ]
 
     const active = {
-        color: "red",
-        textDecoration: 'none'
+        color: "white",
+        // textDecoration: '6px underline #10696B',
+        textDecoration: '5.2px underline white',
     }
     const inactive = {
-        color: 'black',
+        color: 'white',
         textDecoration: 'none'
     }
 
@@ -41,7 +42,7 @@ const Navbar = () => {
                 top: '0',
                 margin: '0',
                 padding: '0',
-                backgroundColor: 'lightblue',
+                backgroundColor:'#893CAA',
                 alignItems: 'center',
             }}>
                 <h3>EcomExpress</h3>

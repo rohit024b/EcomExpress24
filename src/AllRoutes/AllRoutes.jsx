@@ -8,6 +8,7 @@ import ProdDetails from '../Pages/ProdDetails'
 import Admin from '../Pages/Admin'
 import ErrorPage from '../Pages/ErrorPage'
 import Navbar from '../Components/Navbar'
+import Products from '../Pages/Products'
 
 const AllRoutes = () => {
     return (
@@ -20,6 +21,7 @@ const AllRoutes = () => {
                 <Route path='/login' element={<Login />} />
                 <Route path='/productDetails/:id' element={<ProdDetails />} />
                 <Route path='/masaiAdmin' element={<Admin />} />
+                <Route path='/products' element={<Products />} />
                 <Route path='*' element={<ErrorPage />} />
             </Routes>
         </>

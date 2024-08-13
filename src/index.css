@@ -8,7 +8,7 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: #767dfaeb;
+  /* color: #767dfaeb; */
 }
 
 body {
@@ -37,12 +37,12 @@ button {
   
 }
 button:hover {
-  background-color: #893caaed;
+  /* background-color: #893caaed; */
   /* background-color: #e00000bd; */
   border-color:#646cff;
 }
 button:focus,
 button:focus-visible {
-  outline: 1px auto -webkit-focus-ring-color;
+  /* outline: 1px auto -webkit-focus-ring-color; */
 }
 

@@ -1,7 +1,7 @@
 import React, { createContext, useState } from 'react';
 import axios from 'axios';
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -58,4 +58,4 @@ export const AuthContextProvider = ({ children }) => {
   );
 };
 
-export default AuthContext;
+export default AuthContext

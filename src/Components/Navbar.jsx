@@ -24,32 +24,48 @@ const Navbar = () => {
       onClick: isLoggedIn ? logout : null,
     },
   ];
+    const active = {
+        color: "white",
+        // textDecoration: '6px underline #10696B',
+        textDecoration: '5.2px underline white',
+    }
+    const inactive = {
+        color: 'white',
+        textDecoration: 'none'
+    }
 
-  const active = { color: "red", textDecoration: 'none' };
-  const inactive = { color: 'black', textDecoration: 'none' };
+    return (
+        <>
+            <div className='navbar' style={{
+                display: 'flex',
+                justifyContent: 'space-around',
+                top: '0',
+                margin: '0',
+                padding: '0',
+                backgroundColor:'#893CAA',
+                alignItems: 'center',
+            }}>
+                <h3>EcomExpress</h3>
+                <div style={{
+                    display: 'flex',
+                    gap: '90px'
+                }}>
+                    {Links.map((el) => {
+                        return (
+                            <NavLink
+                                style={({ isActive }) => isActive ? active : inactive}
+                                onClick={el.onClick}
+                                // className={({ isActive }) => isActive ? 'active' : 'default'}
+                                to={el.path} key={el.name}>
+                                {el.name}
 
-  return (
-    <div className='navbar' 
-    style={{ display: 'flex', 
-             justifyContent: 'space-around', 
-             backgroundColor: 'lightblue', 
-             alignItems: 'center' 
-          }}>
-      <h3>EcomExpress</h3>
-      <div style={{ display: 'flex', gap: '90px' }}>
-        {Links.map((link) => (
-          <NavLink
-            key={link.name}
-            to={link.path}
-            style={({ isActive }) => (isActive ? active : inactive)}
-            onClick={link.onClick}
-          >
-            {link.name}
-          </NavLink>
-        ))}
-      </div>
-    </div>
-  );
-};
-
+                            </NavLink>
+                        )
+                    })
+                    }
+                </div>
+            </div>
+        </>
+    )
+}
 export default Navbar;

@@ -1,28 +1,29 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
-
+import React, { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
+import AuthContext from '../Context/AuthContext';
 
 const Navbar = () => {
+  const { isLoggedIn, logout } = useContext(AuthContext);
 
-    const Links = [
-        {
-            path: "/",
-            name: "Home"
-        },
-        {
-            path: "/cart:id",
-            name: "Cart"
-        },
-        {
-            path: "/contact",
-            name: "Contact"
-        },
-        {
-            path: "/login",
-            name: "Login"
-        },
-    ]
-
+  const Links = [
+    { 
+      path: "/", 
+      name: "Home" 
+    },
+    { 
+      path: "/cart:id", 
+      name: "Cart" 
+    },
+    { 
+      path: "/contact", 
+      name: "Contact" 
+    },
+    {
+      path: isLoggedIn ? "/" : "/login",
+      name: isLoggedIn ? "Logout" : "Login",
+      onClick: isLoggedIn ? logout : null,
+    },
+  ];
     const active = {
         color: "white",
         // textDecoration: '6px underline #10696B',
@@ -32,7 +33,6 @@ const Navbar = () => {
         color: 'white',
         textDecoration: 'none'
     }
-
 
     return (
         <>
@@ -54,9 +54,11 @@ const Navbar = () => {
                         return (
                             <NavLink
                                 style={({ isActive }) => isActive ? active : inactive}
+                                onClick={el.onClick}
                                 // className={({ isActive }) => isActive ? 'active' : 'default'}
                                 to={el.path} key={el.name}>
                                 {el.name}
+
                             </NavLink>
                         )
                     })
@@ -66,6 +68,4 @@ const Navbar = () => {
         </>
     )
 }
-
-export default Navbar
-
+export default Navbar;

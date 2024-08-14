@@ -7,9 +7,9 @@ a {
   color: #4a53ff;
   text-decoration: inherit;
 }
-a:hover {
-  /* color: #767dfaeb; */
-}
+/* a:hover {
+   color: #767dfaeb; 
+} */
 
 body {
   margin: 0 auto;
@@ -37,12 +37,11 @@ button {
   
 }
 button:hover {
-  /* background-color: #893caaed; */
-  /* background-color: #e00000bd; */
   border-color:#646cff;
 }
-button:focus,
-button:focus-visible {
+
+/* button:focus, */
+/* button:focus-visible { */
   /* outline: 1px auto -webkit-focus-ring-color; */
-}
+/* } */
 

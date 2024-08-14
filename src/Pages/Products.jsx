@@ -1,16 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import IsLoading from '../Components/IsLoading'
 import IsError from '../Components/IsError'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import AuthContext from '../Context/AuthContext'
 
 const Products = () => {
     const URL = "https://fakestoreapi.com/products"
     // const URL = "https://api.escuelajs.co/api/v1/products"
-
+    const navigate = useNavigate();
 
     const [product, setproduct] = useState([])
     const [isLoading, setLoading] = useState(false)
     const [iserror, setError] = useState(false)
+    const { handleCardClick, handleAddToCart } = useContext(AuthContext)
+
 
     const getData = async () => {
 
@@ -27,7 +31,7 @@ const Products = () => {
 
     }
 
-    console.log(product)
+    // console.log(product)
 
     useEffect(() => {
         getData();
@@ -47,20 +51,21 @@ const Products = () => {
                         gap: '10px'
                     }}>
                         {
-                            product && product.map((el,index) => {
+                            product && product.map((el, index) => {
                                 return <>
                                     <div className='prodcard' key={el.id}>
-                                        <img height={'300px'} width={'300px'} src={el.image} alt="" style={{ objectFit: 'contain' }} />
-                                        <b>{el.title}</b>
-                                        <p>Rs.{el.price}</p>
+                                        <img onClick={() => handleCardClick(el.id)} height={'300px'} width={'300px'} src={el.image} alt="" style={{ objectFit: 'contain' }} />
+                                        <h4 onClick={() => handleCardClick(el.id)}>{el.title}</h4>
+                                        <p onClick={() => handleCardClick(el.id)}>Rs.{el.price}</p>
+                                        <button onClick={() => handleAddToCart(el.id)}>Add To Cart</button>
                                     </div>
                                 </>
                             })
                         }
-
                     </div>
             }
         </div>
-    )}
+    )
+}
 
 export default Products

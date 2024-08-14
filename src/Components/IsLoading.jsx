@@ -6,8 +6,8 @@ const IsLoading = () => {
     // className='spinner'
     //  size={'50'}
   return (
-    <div  >
-        <ClipLoader speedMultiplier={1.5} color='red' />
+    <div className='spinner'>
+        <ClipLoader size={60} speedMultiplier={1.5} color='red' />
     </div>
   )
 }

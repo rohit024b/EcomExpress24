@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import AuthContext from '../Context/AuthContext';
 
 const Navbar = () => {
   const { isLoggedIn, logout } = useContext(AuthContext);
+
+  const { id } = useParams()
 
   const Links = [
     { 
@@ -11,8 +13,8 @@ const Navbar = () => {
       name: "Home" 
     },
     { 
-      path: "/cart:id", 
-      name: "Cart" 
+      path: "/products", 
+      name: "Products" 
     },
     { 
       path: "/contact", 
@@ -22,6 +24,10 @@ const Navbar = () => {
       path: isLoggedIn ? "/" : "/login",
       name: isLoggedIn ? "Logout" : "Login",
       onClick: isLoggedIn ? logout : null,
+    },
+    { 
+      path: `/cart/${id}`, 
+      name: "Cart" 
     },
   ];
     const active = {
@@ -38,12 +44,14 @@ const Navbar = () => {
         <>
             <div className='navbar' style={{
                 display: 'flex',
+                width:'100%',
                 justifyContent: 'space-around',
                 top: '0',
                 margin: '0',
                 padding: '0',
                 backgroundColor:'#893CAA',
                 alignItems: 'center',
+                position:'fixed'
             }}>
                 <h3>EcomExpress</h3>
                 <div style={{
@@ -55,9 +63,10 @@ const Navbar = () => {
                             <NavLink
                                 style={({ isActive }) => isActive ? active : inactive}
                                 onClick={el.onClick}
-                                // className={({ isActive }) => isActive ? 'active' : 'default'}
                                 to={el.path} key={el.name}>
-                                {el.name}
+                                {
+                                  el.name==='Cart' ?  el.name : el.name
+                                }
 
                             </NavLink>
                         )

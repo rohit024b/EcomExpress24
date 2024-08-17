@@ -9,6 +9,7 @@ import Admin from '../Pages/Admin'
 import ErrorPage from '../Pages/ErrorPage'
 import Navbar from '../Components/Navbar'
 import Products from '../Pages/Products'
+import PrivateRoutes from './PrivateRoutes'
 
 const AllRoutes = () => {
     return (
@@ -16,12 +17,16 @@ const AllRoutes = () => {
             <Navbar />
             <Routes>
                 <Route path='/' element={<Home />} />
-                <Route path='/cart/:id' element={<Cart />} />
+                <Route path='/cart/:id' element={<PrivateRoutes><Cart /></PrivateRoutes>} />
                 <Route path='/contact' element={<Contact />} />
                 <Route path='/login' element={<Login />} />
-                <Route path='/productDetails/:id' element={<ProdDetails />} />
+                <Route path='/productDetails/:id' element={<PrivateRoutes>
+                    <ProdDetails />
+                    </PrivateRoutes>} />
                 <Route path='/masaiAdmin' element={<Admin />} />
-                <Route path='/products' element={<Products />} />
+                <Route path='/products' element={<PrivateRoutes>
+                    <Products />
+                    </PrivateRoutes>} />
                 <Route path='*' element={<ErrorPage />} />
             </Routes>
         </>

@@ -58,7 +58,7 @@ export const AuthContextProvider = ({ children }) => {
     setIsLoggedIn(false);
   };
   const handleAddToCart=(id)=>{
-    console.log(id)
+    // console.log(id)
     navigate(`/cart/${id}`)
 }
 

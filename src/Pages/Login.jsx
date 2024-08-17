@@ -6,18 +6,16 @@ import '../CSS/login.css'
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loginFailed, setLoginFailed] = useState(false);
   const [setErrorMessage] = useState("");
 
-  const { login } = useContext(AuthContext);
+  const { isLoggedIn, logoutRequested, login, logout } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await login(email, password);
-      setIsLoggedIn(true);
       setTimeout(() => {
         navigate("/");
       }, 2000);
@@ -30,12 +28,22 @@ const Login = () => {
       }, 3000);
     }
   };
+  const handleLogout = () => {
+    logout();
+    setEmail("");
+    setPassword("");
+  };
 
   return (
     <div className="box1">
       <div className="box2">
-        <h2>Login</h2>
-        {isLoggedIn ? (
+      <h2>{isLoggedIn ? "" : "Login"}</h2>
+      {isLoggedIn && logoutRequested ? (
+          <div>
+            <h2>Are you sure you want to logout?</h2>
+            <button onClick={handleLogout}>Confirm Logout</button>
+          </div>
+        ) : isLoggedIn ? (
           <div className="success-message">
             <h2>Successfully Logged In</h2>
             <p>Now you can buy anything!</p>

@@ -5,6 +5,7 @@ export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [logoutRequested, setLogoutRequested] = useState(false);
 
   const login = async (email, password) => {
     //   try {
@@ -39,20 +40,25 @@ export const AuthContextProvider = ({ children }) => {
       }
 
       setIsLoggedIn(true);
+      setLogoutRequested(false);
       return res.data;
     } catch (error) {
       setIsLoggedIn(false);
       throw error;
     }
   };
+  const requestLogout = () => {
+    setLogoutRequested(true);
+  };
 
 
   const logout = () => {
     setIsLoggedIn(false);
+    setLogoutRequested(false);
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
+    <AuthContext.Provider value={{ isLoggedIn, logoutRequested, login, requestLogout, logout }}>
       {children}
     </AuthContext.Provider>
   );

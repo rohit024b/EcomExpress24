@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import AuthContext from '../Context/AuthContext';
 
 const Navbar = () => {
-  const { isLoggedIn, logout } = useContext(AuthContext);
+  const { isLoggedIn, requestLogout } = useContext(AuthContext);
 
   const Links = [
     { 
@@ -19,9 +19,9 @@ const Navbar = () => {
       name: "Contact" 
     },
     {
-      path: isLoggedIn ? "/" : "/login",
+      path: isLoggedIn ? "/login" : "/login",
       name: isLoggedIn ? "Logout" : "Login",
-      onClick: isLoggedIn ? logout : null,
+      onClick: isLoggedIn ? requestLogout : null,
     },
   ];
     const active = {

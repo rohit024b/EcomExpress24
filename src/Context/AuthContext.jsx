@@ -12,6 +12,7 @@ export const AuthContextProvider = ({ children }) => {
   const handleCardClick = (id) => {
     navigate(`/productDetails/${id}`)
 }
+  const [logoutRequested, setLogoutRequested] = useState(false);
 
   const login = async (email, password) => {
     //   try {
@@ -46,16 +47,21 @@ export const AuthContextProvider = ({ children }) => {
       }
 
       setIsLoggedIn(true);
+      setLogoutRequested(false);
       return res.data;
     } catch (error) {
       setIsLoggedIn(false);
       throw error;
     }
   };
+  const requestLogout = () => {
+    setLogoutRequested(true);
+  };
 
 
   const logout = () => {
     setIsLoggedIn(false);
+    setLogoutRequested(false);
   };
   const handleAddToCart=(id)=>{
     console.log(id)
@@ -63,7 +69,7 @@ export const AuthContextProvider = ({ children }) => {
 }
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, login, logout , handleCardClick,handleAddToCart}}>
+    <AuthContext.Provider value={{ isLoggedIn, logoutRequested, login, requestLogout, logout,handleCardClick,handleAddToCart }}>
       {children}
     </AuthContext.Provider>
   );

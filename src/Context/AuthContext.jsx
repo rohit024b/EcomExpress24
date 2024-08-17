@@ -1,10 +1,17 @@
 import React, { createContext, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'
 
-export const AuthContext = createContext();
+
+const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const navigate = useNavigate();
+  const handleCardClick = (id) => {
+    navigate(`/productDetails/${id}`)
+}
   const [logoutRequested, setLogoutRequested] = useState(false);
 
   const login = async (email, password) => {
@@ -56,12 +63,15 @@ export const AuthContextProvider = ({ children }) => {
     setIsLoggedIn(false);
     setLogoutRequested(false);
   };
+  const handleAddToCart=(id)=>{
+    console.log(id)
+    navigate(`/cart/${id}`)
+}
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, logoutRequested, login, requestLogout, logout }}>
+    <AuthContext.Provider value={{ isLoggedIn, logoutRequested, login, requestLogout, logout,handleCardClick,handleAddToCart }}>
       {children}
     </AuthContext.Provider>
   );
 };
-
 export default AuthContext

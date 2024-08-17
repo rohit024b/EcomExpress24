@@ -1,6 +1,6 @@
 .prodcard {
   border: 0.5px solid purple;
-  padding: 5px;
+  padding: 10px;
   /* background-color: rgba(128, 0, 128, 0.192); */
   cursor: pointer;
 }
@@ -17,7 +17,7 @@
 .homeContainer {
   margin: 0 auto;
   padding: 3rem;
-  padding-top: 0;
+  /* padding-top: 0; */
 }
 
 .msgOnLeft {
@@ -46,11 +46,26 @@
   margin-top: 40px;
   margin-bottom: 60px;
   display: grid;
+  grid-template-columns: repeat(4, 345px);
+  gap: 10px;
+}
+.homeCardsW {
+  margin-top: 40px;
+  margin-bottom: 60px;
+  display: grid;
   grid-template-columns: repeat(6, 345px);
   gap: 10px;
   overflow-y: hidden;
 }
-.homeCards::-webkit-scrollbar{
+
+.homeCardsW::-webkit-scrollbar{
   display: inline;
   
+}
+
+.ContactContainer{
+  margin: 0 auto;
+  padding: 3rem;
+  padding-top: 4rem;
+  text-align: center;
 }

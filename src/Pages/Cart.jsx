@@ -96,7 +96,7 @@ const Cart = () => {
                 </div>
               </div>
               <div className="price">
-                <p><span>Price</span> : Rs.{el.price * el.count}</p>
+                <p><span>Price</span> : Rs.{(el.price * el.count).toFixed(2)}</p>
                 <div className="product-size">
                   <button onClick={() => handleDecrement(el.id)} disabled={el.count <= 1} className="btn-product">-</button>
                   <b>{el.count}</b>

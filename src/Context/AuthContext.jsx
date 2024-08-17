@@ -64,7 +64,7 @@ export const AuthContextProvider = ({ children }) => {
     setLogoutRequested(false);
   };
   const handleAddToCart=(id)=>{
-    console.log(id)
+    // console.log(id)
     navigate(`/cart/${id}`)
 }
 

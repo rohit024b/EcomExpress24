@@ -66,7 +66,7 @@ const Home = () => {
     return (
         <>
             {
-                isLoading ? <IsLoading /> :
+                isLoading ? <IsLoading /> : iserror ? <IsError /> :
                     <div className='homeContainer'>
                         <HomeCover />
                         {

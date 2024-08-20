@@ -30,8 +30,6 @@ const Login = () => {
   };
   const handleLogout = () => {
     logout();
-    setEmail("");
-    setPassword("");
   };
 
   return (

@@ -1,0 +1,51 @@
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .error-content {
+    max-width: 600px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .error-code {
+    font-size: 120px;
+    color: #dc3545;
+    margin: 0;
+  }
+  
+  .error-message {
+    font-size: 24px;
+    color: #343a40;
+    margin: 10px 0;
+  }
+  
+  .error-description {
+    font-size: 16px;
+    color: #6c757d;
+    margin: 10px 0 20px;
+  }
+  
+  .home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .home-button:hover {
+    background-color: #0056b3;
+  }
+  

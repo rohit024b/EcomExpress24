@@ -1,7 +1,7 @@
 import axios from "axios";
 import "../CSS/cart.css";
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import IsLoading from "../Components/IsLoading";
 import IsError from "../Components/IsError";
 
@@ -11,6 +11,7 @@ const Cart = () => {
   const [cart, setCart] = useState([]);  // Cart state initialized as an array
   const [isLoading, setLoading] = useState(false);
   const [isError, setError] = useState(false);
+  const navigate = useNavigate();
 
   // Function to fetch product data
   const getData = async () => {
@@ -74,6 +75,9 @@ const Cart = () => {
       prevCart.filter(el => el.id !== id)
     )
   }
+  const handleCheckout = () => {
+    navigate('/payment', { state: { cartItems: cart } });
+};
 
   return (
     <div className="CartContainer">
@@ -116,7 +120,7 @@ const Cart = () => {
         </div>
         <div className="cart-items">
           <h4>Total Price: Rs.{cart.reduce((acc, item) => acc + item.price * item.count, 0).toFixed(2)}</h4>
-          <button className="checkout btn">Checkout</button>
+          <button className="checkout btn" onClick={handleCheckout}>Checkout</button>
         </div>
       </div>
     </div>

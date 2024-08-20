@@ -10,6 +10,7 @@ import ErrorPage from '../Pages/ErrorPage'
 import Navbar from '../Components/Navbar'
 import Products from '../Pages/Products'
 import PrivateRoutes from './PrivateRoutes'
+import PaymentPage from '../Pages/PaymentPage'
 
 const AllRoutes = () => {
     return (
@@ -28,6 +29,7 @@ const AllRoutes = () => {
                     <Products />
                     </PrivateRoutes>} />
                 <Route path='*' element={<ErrorPage />} />
+                <Route path="/payment" element={<PaymentPage />} />
             </Routes>
         </>
     )

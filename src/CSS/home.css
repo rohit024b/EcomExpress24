@@ -30,6 +30,11 @@
   justify-content: center;
 }
 
+.msgOnLeft >h1{
+  text-align: left;
+  text-wrap: nowrap;
+}
+
 .arrow {
   border: solid white;
   border-width: 0 3px 3px 0;

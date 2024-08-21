@@ -53,7 +53,13 @@ const Navbar = () => {
                 alignItems: 'center',
                 position:'fixed'
             }}>
-                <h3>EcomExpress</h3>
+                {/* <h3>EcomExpress</h3> */}
+                {/* <img width={'250px'} height={'60px'} style={{
+                  objectFit:'contain'
+                }} src="https://i.imgur.com/2ubE758.png" alt="logo" /> */}
+                <img width={'200px'} height={'60px'} style={{
+                  objectFit:'contain'
+                }} src="https://i.imgur.com/lTXSW2L.png" alt="logo" />
                 <div style={{
                     display: 'flex',
                     gap: '90px'

@@ -30,20 +30,15 @@ const Home = () => {
         })
     }
 
-    // console.log(product)
-
     useEffect(() => {
         getData();
     }, [])
 
-
-    // console.log(product)
     const filteredProductsM = product.filter((el) => el.category === "men's clothing");
     const filteredProductsW = product.filter((el) => el.category === "women's clothing");
     const filteredProductsJ = product.filter((el) => el.category === "jewelery");
     const filteredProductsE = product.filter((el) => el.category === "electronics");
 
-    // console.log(filteredProductsW)
     const filterdData = [
         {
             name: 'POPULAR IN MEN',

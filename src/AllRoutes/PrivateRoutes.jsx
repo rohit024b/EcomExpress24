@@ -9,8 +9,6 @@ console.log('hihihih')
   if(!isLoggedIn){
     return <Navigate to={'/login'}/>
   }
-  
   return children
 }
-
 export default PrivateRoutes

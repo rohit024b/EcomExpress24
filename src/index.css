@@ -1,4 +1,5 @@
 :root {
+  width: 100%;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
@@ -7,11 +8,9 @@ a {
   color: #4a53ff;
   text-decoration: inherit;
 }
-/* a:hover {
-   color: #767dfaeb; 
-} */
 
 body {
+  width: 100%;
   margin: 0 auto;
   padding: 0;
   top: 0;
@@ -31,7 +30,6 @@ button {
   font-family: inherit;
   cursor: pointer;
   transition: border-color 0.25s;
-  /* background-color: #e00000; */
   background-color: #893CAA;
   color: #FFFFFF;
   
@@ -39,9 +37,4 @@ button {
 button:hover {
   border-color:#646cff;
 }
-
-/* button:focus, */
-/* button:focus-visible { */
-  /* outline: 1px auto -webkit-focus-ring-color; */
-/* } */
 

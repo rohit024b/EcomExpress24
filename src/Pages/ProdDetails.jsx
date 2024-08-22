@@ -30,9 +30,6 @@ const ProdDetails = () => {
       })
   }
 
-  //create user post method
-  // console.log(details.rating.rate)
-
   useEffect(() => {
     getData()
   }, [])

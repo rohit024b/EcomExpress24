@@ -3,20 +3,16 @@ import '../CSS/home.css'
 import {   useNavigate } from 'react-router-dom'
 
 const HomeCover = () => {
-
   const navigate = useNavigate()
   const handleClick=()=>{
     navigate('/products')
   }
-
-
   return (
     <div style={{
       width:'100%',
       height:'95vh',
       display:'flex',
-      alignItems:'center',
-      justifyContent:'center'
+      alignItems:'center'
     }}>
         <div className='msgOnLeft'>
           <b>NEW ARRIVALS ONLY</b>
@@ -29,5 +25,4 @@ const HomeCover = () => {
     </div>
   )
 }
-
 export default HomeCover

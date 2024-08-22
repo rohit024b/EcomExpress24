@@ -32,7 +32,6 @@ const Navbar = () => {
   ];
     const active = {
         color: "white",
-        // textDecoration: '6px underline #10696B',
         textDecoration: '5.2px underline white',
     }
     const inactive = {
@@ -53,7 +52,9 @@ const Navbar = () => {
                 alignItems: 'center',
                 position:'fixed'
             }}>
-                <h3>EcomExpress</h3>
+                <img width={'200px'} height={'55px'} style={{
+                  objectFit:'contain'
+                }} src="https://i.imgur.com/lTXSW2L.png" alt="logo" />
                 <div style={{
                     display: 'flex',
                     gap: '90px'

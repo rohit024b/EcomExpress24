@@ -31,13 +31,10 @@ const Cart = () => {
         return [...prevCart, newCartItem];
       });
     } catch (err) {
-      console.log(err);
       setLoading(false);
       setError(true);
     }
   };
-
-  console.log(cart)
 
   // Load cart data from local storage when the component mounts
   useEffect(() => {
@@ -70,7 +67,6 @@ const Cart = () => {
   };
 
   const handleRemoveItemFromoCart = (id) => {
-    // confirm("DO YOU WANT TO REMVOVE THIS ITEM FROM CART ? ")
     setCart(prevCart =>
       prevCart.filter(el => el.id !== id)
     )
@@ -81,7 +77,6 @@ const Cart = () => {
 
   return (
     <div className="CartContainer">
-      {/* Cart List */}
       {
         isLoading ? <IsLoading /> : isError ? <IsError /> :
          cart && cart.slice().reverse().map(el => (
@@ -96,7 +91,6 @@ const Cart = () => {
                 <p><span>Rating</span>: {el.rating?.rate} ⭐</p>
                 <div className="cart-refer">
                   <button onClick={() => handleRemoveItemFromoCart(el.id)} className="remove btn">Remove</button>
-                  {/* <button className="checkout btn">Checkout</button> */}
                 </div>
               </div>
               <div className="price">
@@ -114,7 +108,6 @@ const Cart = () => {
       }
       <div className="total-price">
         <div className="items">
-          {/* <h4>Total Items: {cart.reduce((acc, item) => acc + item.count, 0)}</h4> */}
           <h4>Total Items: {cart.length}</h4>
           <input type="text" className="card-off" placeholder=" Add discount card" />
         </div>

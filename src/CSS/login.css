@@ -1,10 +1,10 @@
+/* For larger screens (desktops) */
 .box1 {
   display: flex;
-  padding: 4rem;
   justify-content: center;
-  align-items: flex-start;
-  min-height: calc(100vh - 70px);
-  margin-top: 20px;
+  align-items: center;
+  padding: 4rem;
+  min-height: 100vh;
 }
 
 .box2 {
@@ -12,21 +12,21 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   padding: 20px;
   box-sizing: border-box;
   text-align: center;
 }
 
 .box2 h2 {
-  font-size: 24px;
+  font-size: 28px;
   color: #333;
   margin-bottom: 20px;
 }
 
 .input-form input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin: 10px 0;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -34,11 +34,11 @@
 }
 
 .input-form button {
-  padding: 10px;
+  padding: 12px;
   border-radius: 4px;
   cursor: pointer;
   width: 100%;
-  font-size: 16px;
+  font-size: 18px;
   margin-top: 10px;
 }
 
@@ -67,7 +67,7 @@
   color: #721c24;
   border: 1px solid #f5c6cb;
   border-radius: 4px;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 20px;
   font-size: 16px;
   font-weight: bold;
@@ -75,4 +75,88 @@
 
 .error-message p {
   margin: 0;
+}
+
+/* For tablets */
+@media (max-width: 900px) {
+  .box1 {
+    padding: 3rem;
+  }
+
+  .box2 {
+    max-width: 90%;
+  }
+
+  .box2 h2 {
+    font-size: 24px;
+  }
+
+  .input-form input {
+    padding: 10px;
+  }
+
+  .input-form button {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .success-message {
+    font-size: 22px;
+  }
+
+  .success-message p {
+    font-size: 16px;
+  }
+
+  .success-message::before {
+    font-size: 32px;
+  }
+
+  .error-message {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* For mobile */
+@media (max-width: 600px) {
+  .box1 {
+    padding: 2rem;
+  }
+
+  .box2 {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .box2 h2 {
+    font-size: 20px;
+  }
+
+  .input-form input {
+    padding: 12px;
+    margin: 8px 0;
+  }
+
+  .input-form button {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .success-message {
+    font-size: 20px;
+  }
+
+  .success-message p {
+    font-size: 14px;
+  }
+
+  .success-message::before {
+    font-size: 28px;
+  }
+
+  .error-message {
+    font-size: 12px;
+    padding: 8px;
+  }
 }

@@ -2,13 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import IsLoading from '../Components/IsLoading';
 import IsError from '../Components/IsError';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 import AuthContext from '../Context/AuthContext';
 
 const Products = () => {
     const URL = "https://fakestoreapi.com/products";
-    const navigate = useNavigate();
-
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [paginatedProducts, setPaginatedProducts] = useState([]);
@@ -89,7 +86,6 @@ const Products = () => {
             <h1 style={{ marginBottom: "20px" }}>LATEST COLLECTIONS</h1>
             <hr size='5' color='purple' width="200px" />
             <div>
-                {/* Filtering and sorting */}
                 <span>
                     <select onChange={handleSortByPrice} name="sortByPrice" id="sortByPrice">
                         <option value="">-Sort by price-</option>

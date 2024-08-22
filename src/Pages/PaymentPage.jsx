@@ -119,7 +119,6 @@ const PaymentPage = () => {
 
           {paymentMethod === 'upi' && (
             <div className="upi-info">
-              {/* <p>Please choose your UPI payment option:</p> */}
               <div className="upi-options">
                 <label>
                   <input type="radio" name="upi" value="phonepe" />
@@ -137,9 +136,6 @@ const PaymentPage = () => {
             </div>
           )}
         </div>
-
-
-
         <button type="submit" className="submit-button">Place Order</button>
 
         {paymentStatus === 'success' && (

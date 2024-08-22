@@ -1,186 +1,252 @@
 .payment-page {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 30px;
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
-    font-family: 'Roboto', sans-serif;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #333333;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  color: #6a11cb;
+  border-bottom: 3px solid #6a11cb;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+  font-size: 1.5em;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 8px rgba(106, 17, 203, 0.5);
+  outline: none;
+}
+
+.payment-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.payment-options label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.payment-options input[type="radio"] {
+  margin: 0;
+}
+
+.payment-options label:hover {
+  color: #6a11cb;
+}
+
+.credit-card-info input[type="text"] {
+  width: calc(50% - 10px);
+  margin-right: 10px;
+}
+
+.credit-card-info input[type="text"]:nth-child(2n) {
+  margin-right: 0;
+}
+
+.order-summary {
+  background: #f9fafc;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.order-summary p {
+  margin: 0;
+  font-size: 1.1em;
+  color: #555;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.submit-button:hover {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  transform: translateY(-3px);
+}
+
+.submit-button:active {
+  transform: translateY(1px);
+}
+
+.payment-page::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.payment-status.success {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-size: 1.1em;
+}
+
+.payment-status.failed {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-size: 1.1em;
+}
+
+.upi-info {
+  margin-top: 20px;
+}
+
+.upi-info p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.upi-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.upi-options label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.payment-logo {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.upi-options label:hover {
+  color: #6a11cb;
+}
+
+@media (max-width: 768px) {
+  .payment-page {
+    padding: 20px;
   }
-  
+
   h1 {
-    text-align: center;
-    color: #333333;
-    margin-bottom: 30px;
-    font-size: 2.5em;
-    font-weight: bold;
+    font-size: 2em;
   }
-  
-  .section {
-    margin-bottom: 40px;
-  }
-  
+
   .section h2 {
-    color: #6a11cb;
-    border-bottom: 3px solid #6a11cb;
-    padding-bottom: 10px;
-    margin-bottom: 25px;
-    font-size: 1.5em;
+    font-size: 1.25em;
   }
-  
-  input[type="text"],
-  input[type="email"],
-  select {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1em;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  input[type="text"]:focus,
-  input[type="email"]:focus,
-  select:focus {
-    border-color: #6a11cb;
-    box-shadow: 0 0 8px rgba(106, 17, 203, 0.5);
-    outline: none;
-  }
-  
-  .payment-options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .payment-options label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    font-size: 1.2em;
-    color: #333;
-    transition: color 0.3s ease;
-  }
-  
-  .payment-options input[type="radio"] {
-    margin: 0;
-  }
-  
-  .payment-options label:hover {
-    color: #6a11cb;
-  }
-  
+
   .credit-card-info input[type="text"] {
-    width: calc(50% - 10px);
-    margin-right: 10px;
-  }
-  
-  .credit-card-info input[type="text"]:nth-child(2n) {
+    width: 100%;
     margin-right: 0;
-  }
-  
-  .order-summary {
-    background: #f9fafc;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-  }
-  
-  .order-summary p {
-    margin: 0;
-    font-size: 1.1em;
-    color: #555;
-  }
-  
-  .submit-button {
-    width: 100%;
-    padding: 18px;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 1.2em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
-  }
-  
-  .submit-button:hover {
-    background: linear-gradient(135deg, #2575fc, #6a11cb);
-    transform: translateY(-3px);
-  }
-  
-  .submit-button:active {
-    transform: translateY(1px);
-  }
-  
-  .payment-page::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    z-index: -1;
-    opacity: 0.6;
-  }
-  
-  .payment-status.success {
-    background-color: #d4edda;
-    color: #155724;
-    padding: 20px;
-    margin-top: 10px;
-    border-radius: 8px;
-    font-size: 1.1em;
-  }
-  
-  .payment-status.failed {
-    background-color: #f8d7da;
-    color: #721c24;
-    padding: 20px;
-    margin-top: 10px;
-    border-radius: 8px;
-    font-size: 1.1em;
-  }
-  
-  /* UPI Payment Options */
-  .upi-info {
-    margin-top: 20px;
-  }
-  
-  .upi-info p {
-    font-size: 1.2em;
     margin-bottom: 10px;
   }
-  
-  .upi-options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+
+  .order-summary {
+    padding: 15px;
   }
-  
-  .upi-options label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    font-size: 1.1em;
-    color: #333;
-    transition: color 0.3s ease;
+
+  .submit-button {
+    font-size: 1em;
+    padding: 15px;
   }
-  
+
   .payment-logo {
-    height: 40px;
-    width: auto;
-    margin-right: 10px;
+    height: 35px;
   }
-  
-  .upi-options label:hover {
-    color: #6a11cb;
+}
+
+@media (max-width: 480px) {
+  .payment-page {
+    padding: 15px;
   }
-  
+
+  h1 {
+    font-size: 1.75em;
+  }
+
+  .section h2 {
+    font-size: 1.1em;
+  }
+
+  .order-summary {
+    padding: 10px;
+  }
+
+  .submit-button {
+    font-size: 0.9em;
+    padding: 12px;
+  }
+
+  .payment-logo {
+    height: 30px;
+  }
+
+  .upi-options {
+    flex-direction: column;
+  }
+
+  .upi-options label {
+    font-size: 1em;
+  }
+}

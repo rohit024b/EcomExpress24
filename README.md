@@ -1,10 +1,52 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+You can access it here --> '[EcomExpres24](https://e-com-express24.netlify.app/)'
+User Credentials - 
+- * *Username* * -> 'eve.holt@reqres.in'
+- * *Pasword* * -> '1234'
 
-Currently, two official plugins are available:
+# EcomExpres24
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Use on your local:
+- Fork > clone the repo which is the basic
+- After cloning the project on your local you need to run few command for installation :
+    - 'npm install'
+    - 'npm i axios'
+    - 'npm install react-spinners --save'
+- After all this to run the project - 'npm run dev' 
 
-- npm install react-spinners --save
+## Basic e-commerce website with key features:
+- Login authentication required for access to Product and Cart pages.
+- After logging in, users are redirected to the Home page.
+
+![im2](./static/ScreenShots/img2.png)
+
+## Home page:
+- Users can explore the latest collections.
+- Users can click on an image or title to be redirected to the specific product details page.
+
+![im1](./static/ScreenShots/img1.png)
+
+## Product details page:
+- User can checkout the whole details about the product.
+- Users can add products to the cart.
+
+![im3](./static/ScreenShots/img3.png)
+
+![im4](./static/ScreenShots/img4.png)
+
+
+## Cart page:
+- Displays a list of added products.
+- Allows users to select the quantity for each product.
+- Updates the total price based on selected quantities.
+
+![im5](./static/ScreenShots/img5.png)
+
+
+## Checkout page:
+- Shows the final bill.
+- Users can fill in details and place their order.
+
+![im6](./static/ScreenShots/img6.png)
+

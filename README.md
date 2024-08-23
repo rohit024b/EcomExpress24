@@ -1,22 +1,23 @@
 # React + Vite
 
-You can access it here --> '[EcomExpres24](https://e-com-express24.netlify.app/)'
-User Credentials - 
-- * *Username* * -> 'eve.holt@reqres.in'
-- * *Pasword* * -> '1234'
+You can access it here --> [EcomExpres24](https://e-com-express24.netlify.app/)
+
+**User Credentials** - 
+- *Username* -> `eve.holt@reqres.in`
+- *Password* -> `1234`
 
 # EcomExpres24
 
 ## Use on your local:
 - Fork > clone the repo which is the basic
-- After cloning the project on your local you need to run few command for installation :
-    - 'npm install'
-    - 'npm i axios'
-    - 'npm install react-spinners --save'
-- After all this to run the project - 'npm run dev' 
+- After cloning the project locally you need to run a few commands for installation :
+    - `npm install`
+    - `npm i axios`
+    - `npm install react-spinners --save`
+- After all, this is to run the project - `npm run dev` 
 
 ## Basic e-commerce website with key features:
-- Login authentication required for access to Product and Cart pages.
+- Login authentication is required for access to Product and Cart pages.
 - After logging in, users are redirected to the Home page.
 
 ![im2](./static/ScreenShots/img2.png)
@@ -28,7 +29,7 @@ User Credentials -
 ![im1](./static/ScreenShots/img1.png)
 
 ## Product details page:
-- User can checkout the whole details about the product.
+- User can check the whole details about the product.
 - Users can add products to the cart.
 
 ![im3](./static/ScreenShots/img3.png)
